@@ -160,3 +160,16 @@ if [ "$MAYBE_FIRST_START" = "true" ]; then
   echo
 fi
 unset MAYBE_FIRST_START
+
+#Default PS1 is in /etc/bash.bashrc
+. /etc/git/git-completion.bash
+[ -r /etc/git/git-prompt.sh ] && . /etc/git/git-prompt.sh
+if ! type __git_ps1 | grep -q '^function$' 2>/dev/null; then
+    export PS1='\033[1;32m\w\033[0m \033[35m$(__git_ps1)\033[0m'$'\n$ '
+else
+    export PS1='\033[1;32m\w\033[0m\n$ '
+fi
+
+#reference:
+#http://sourceforge.net/p/msys2/tickets/17/
+#http://stackoverflow.com/questions/1007538/check-if-a-function-exists-from-a-bash-script
