@@ -2,5 +2,5 @@
 	name = WorldFS
 	email = fsworld009@gmail.com
 [core]
-	editor = vim -u NONE
+	editor = vim -u ./git_sh_config/_vimrc
 	autocrlf = true
