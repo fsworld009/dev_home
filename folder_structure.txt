@@ -1,0 +1,7 @@
+/
+/bin/
+/ConEmu/
+/home/ -> repository root
+/msys64/ -> msys2
+/MINGW-packages/ ->git clone https://github.com/Alexpux/MINGW-packages.git
+/vim/
