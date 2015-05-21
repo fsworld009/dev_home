@@ -4,3 +4,6 @@
 [core]
 	editor = vim -u ~/git_sh_config/_vimrc
 	autocrlf = true
+[http]
+	sslcainfo = ./git_sh_config/curl-ca-bundle.crt
+	sslverify = false
