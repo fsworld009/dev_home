@@ -155,6 +155,17 @@ source $VIMRUNTIME/menu.vim
  
  source ~/projectview.vim 
 
+  "Watchdog, asynchrounous syntax checking
+  NeoBundle 'Shougo/vimproc.vim'
+  NeoBundle 'thinca/vim-quickrun'
+  NeoBundle 'osyo-manga/shabadou.vim'
+  NeoBundle 'osyo-manga/vim-watchdogs'
+  NeoBundle 'jceb/vim-hier'
+  NeoBundle 'dannyob/quickfixstatus'
+
+  NeoBundle 'Shougo/vimshell.vim'
+
+
  " Mark down
  NeoBundle 'tpope/vim-markdown'
  NeoBundle 'https://github.com/jtratner/vim-flavored-markdown'
@@ -201,3 +212,54 @@ source $VIMRUNTIME/menu.vim
  " If there are uninstalled bundles found on startup,
  " this will conveniently prompt you to install them.
  NeoBundleCheck
+
+    "let g:watchdogs_check_BufWritePost_enable = 1
+    let g:watchdogs_check_BufWritePost_enables = {
+            \ "cpp" : 1,
+            \ "javascript" : 1
+            \}
+    "let g:watchdogs_check_CursorHold_enable = 1
+    let g:watchdogs_check_CursorHold_enables = {
+              \ 'javascript': 1,
+              \ 'cpp' : 1}
+
+let s:config = {
+            \   "watchdogs_checker/_" : {
+            \       "hook/u_nya_/enable" : 1,
+            \       "hook/inu/enable" : 0,
+            \       "hook/unite_quickfix/enable" : 0,
+            \       "hook/echo/enable" : 0,
+            \       "hook/back_buffer/enable" : 0,
+            \       "hook/close_unite_quickfix/enable" : 0,
+            \       "hook/close_buffer/enable_exit" : 0,
+            \       "hook/close_quickfix/enable_exit" : 1,
+            \       "hook/redraw_unite_quickfix/enable_exit" : 0,
+            \       "hook/close_unite_quickfix/enable_exit" : 1,
+            \   },
+            \
+            \  "javascript/watchdogs_checker":{
+            \       "type": 'watchdogs_checker/jshint'
+            \  },
+            \
+            \   "cpp/watchdogs_checker" : {
+            \       "hook/add_include_option/enable" : 1,
+            \       "type" : "watchdogs_checker/g++",
+            \   },
+            \
+            \
+            \   "watchdogs_checker/g++" : {
+            \       "command"   : "g++",
+            \       "exec"      : "%c %o -fsyntax-only %s:p ",
+            \   },
+            \
+            \
+            \}
+let g:quickrun_config = {}
+call extend(g:quickrun_config, s:config)
+unlet s:config
+""
+call watchdogs#setup(g:quickrun_config)
+":set shellslash
+"set shell=sh.exe
+"set shellcmdflag=-ci
+

@@ -7,4 +7,4 @@ for %%i in ("%~dp0..") do set "folder=%%~fi"
 
 set PATH=%PATH%;%folder%\vim\
 
-%folder%\msys32\usr\bin\sh.exe -c 'MSYSTEM=MINGW64 exec /bin/sh --login -i'
+%folder%\msys64\usr\bin\sh.exe -c 'MSYSTEM=MINGW32 exec /bin/sh --login -i'

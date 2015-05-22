@@ -8,7 +8,8 @@ set PATH=%ROOT%\msys64\usr\bin\;%PATH%
 set PATH=%ROOT%\bin\node.js\;%PATH%
 set PATH=%ROOT%\bin\tidy\;%PATH%
 set PATH=%ROOT%\bin\ctags\;%PATH%
-set PATH=%ROOT%\bin\python2\;%PATH%
+set PATH=%ROOT%\bin\python3\;%PATH%
+rem set PATH=%ROOT%\bin\python2\;%PATH%
 
 ..\vim\gvim.exe
 exit
