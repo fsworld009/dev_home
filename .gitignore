@@ -2,3 +2,10 @@ _viminfo
 .viminfo
 .bash_history
 .config
+/vim/
+/vimfiles/
+gVimPortableSettings.ini
+/.cache/
+_viminfo
+*.swp
+/D/

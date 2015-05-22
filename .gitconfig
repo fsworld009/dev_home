@@ -2,8 +2,9 @@
 	name = WorldFS
 	email = fsworld009@gmail.com
 [core]
-	editor = vim -u ~/git_sh_config/_vimrc
+	editor = vim -u _vimrc_git
 	autocrlf = true
+    safecrlf = false
 [http]
 	sslcainfo = ./git_sh_config/curl-ca-bundle.crt
 	sslverify = false

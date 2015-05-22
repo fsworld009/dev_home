@@ -1,0 +1,119 @@
+general
+NERDTree
+https://github.com/Xuyuanp/nerdtree-git-plugin
+
+line number
+
+tags : tagbar(better for oop) or taglist
+https://github.com/xolox/vim-easytags
+https://github.com/marijnh/tern
+
+
+indent?
+indentLine -> display vertical lines
+
+indent by filetype
+http://stackoverflow.com/questions/158968/changing-vim-indentation-behavior-by-file-type
+
+
+easymotion
+http://powenyang.blogspot.com/2011/06/vim.html
+
+
+comment
+https://github.com/scrooloose/nerdcommenter
+
+
+powerline -> need python
+
+auto-completion
+C/C++/Objective-C/Objective-C++ 
+YouCompleteMe 
+https://github.com/Shougo/neocomplcache.vim
+
+Omni complete can be refined by ctags/tern (Tagbar triggers ctags/tern to generate tags)
+
+
+https://github.com/tpope/vim-repeat
+repeat every command (include plugin)
+
+https://github.com/myusuf3/numbers.vim
+
+
+Syntastic.vim
+grammar check
+
+HTML
+https://github.com/scrooloose/syntastic/wiki/HTML:---tidy
+
+
+CSS
+https://github.com/scrooloose/syntastic/wiki/CSS:---csslint
+git://github.com/CSSLint/csslint
+
+
+javascript
+need jshint -> npm install -g git://github.com/jshint/jshint
+
+
+Snippet
+https://github.com/Shougo/neosnippet.vim
+https://github.com/spf13/snipmate-snippets
+https://github.com/honza/vim-snippets
+
+HTML
+matchit.zip : extended % matching for HTML
+surround
+emmet
+
+
+ vim-css3-syntax
+html5.vim
+
+visualHtml  http://www.vim.org/scripts/script.php?script_id=4908
+
+vCoolor - A color selector/picker plugin for Vim 
+
+
+javasript
+http://vim.wikia.com/wiki/Converting_tabs_to_spaces
+
+https://github.com/joestelmach/lint.vim
+https://github.com/marijnh/tern_for_vim
+
+node.js-> run tern -> 
+
+https://github.com/michalliu/jsflakes.vim
+
+
+python, ruby
+vim-indent-object
+
+如果你寫的程式語言是用大括號把程式碼包起來的，你只要按vi{就可以把大括號裡的東西全部選起來。但如果遇到像ruby或python這種不需要大括號的，就可以用得上它。
+
+
+
+
+http://vim.wikia.com/wiki/Capture_ex_command_output
+
+
+
+
+vim session
+http://bocoup.com/weblog/sessions-the-vim-feature-you-probably-arent-using/
+https://github.com/xolox/vim-session
+
+:buffer [N] change buffer
+:bdelete
+
+
+
+http://vim.wikia.com/wiki/Search_and_replace
+
+===force en_US
+http://stackoverflow.com/questions/126853/how-do-i-set-the-ui-language-in-vim
+
+
+缺
+find & replace plugin
+lint/tag for javascript/jquery/...etc
