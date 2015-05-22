@@ -30,8 +30,10 @@ source $VIMRUNTIME/menu.vim
  nnoremap <C-Down> <C-w><Down>
  
  " abbreviated motion keys for tab moving
- nnoremap <C-Tab> gt
- nnoremap <C-S-Tab> gT
+ nnoremap ]t gt
+ nnoremap [t gT
+ nnoremap ]T :tabs<CR>
+ nnoremap [T :tabclose<CR>
  
  " abbreviated motion keys for tab moving
  nnoremap ]b :bn<CR>
@@ -147,10 +149,16 @@ source $VIMRUNTIME/menu.vim
  let g:airline#extensions#tabline#enabled = 1
  set laststatus=2
  
+ "Git integration
  NeoBundle 'tpope/vim-fugitive'
  NeoBundle 'gregsexton/gitv'
  
  source ~/projectview.vim 
+
+ " Mark down
+ NeoBundle 'tpope/vim-markdown'
+ NeoBundle 'https://github.com/jtratner/vim-flavored-markdown'
+
 
  " HTML, XML
  autocmd FileType html,markdown,xml setlocal shiftwidth=2 tabstop=2 "set indention to 2 spaces for HTML files
@@ -177,7 +185,8 @@ source $VIMRUNTIME/menu.vim
  let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'
  let g:syntastic_js_checkers = ['jshint']
  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
- NeoBundle 'marijnh/tern_for_vim'
+ NeoBundle 'marijnh/tern_for_vim', { 'build' : {
+             \ 'windows' : 'npm install' }, }
 
  
  " Refer to |:NeoBundle-examples|.
