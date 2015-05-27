@@ -11,5 +11,5 @@ set PATH=%ROOT%\bin\ctags\;%PATH%
 set PATH=%ROOT%\bin\python3\;%PATH%
 rem set PATH=%ROOT%\bin\python2\;%PATH%
 
-..\vim\gvim.exe -u _vimrc_dev
+..\vim\gvim.exe
 exit
