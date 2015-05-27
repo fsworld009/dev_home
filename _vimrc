@@ -12,7 +12,6 @@ let $LANG = 'en_US'
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
- 
  " General settings
  set backspace=2                        "enable backspace key
  set tabstop=4 shiftwidth=4 expandtab   "insert 4 spaces for a tab, display tab characters as 4 spaces
@@ -22,6 +21,10 @@ source $VIMRUNTIME/menu.vim
  " Use bash
  "set shell="sh.exe --login -i"
  "set shellcmdflag="--login -i"
+ "
+ "spell check
+ set spelllang=en
+ nnoremap <leader>S :set spell!<CR>
  
  " abbreviated motion keys for split moving
  nnoremap <C-Left> <C-w><Left>
