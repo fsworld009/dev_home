@@ -45,10 +45,12 @@ source $VIMRUNTIME/menu.vim
  nnoremap ]C :copen<CR>
 
  "close buffers/kill buffers
- nnoremap [B :buf 
  nnoremap [d :bd 
  nnoremap [D :bd<CR>
  nnoremap [C :close<CR>
+
+ "remove highlight
+ nnoremap [h :noh<CR>
  
  " editor styling, colorscheme specified after the scheme file is loaded
  syntax on
@@ -102,8 +104,8 @@ source $VIMRUNTIME/menu.vim
  "let g:syntastic_quiet_messages = { "type": "style","level": "warnings"} 
  let g:syntastic_check_on_open = 0
  let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
- nnoremap ,sy :SyntasticCheck<CR>
- nnoremap ,se :Errors<CR>
+ nnoremap ,yc :SyntasticCheck<CR>
+ nnoremap ,ye :Errors<CR>
  let g:syntastic_check_on_wq=0
  let g:syntastic_enable_highlighting=0
  "active mode is broken when NERDTree is opened, workaround
@@ -153,28 +155,47 @@ source $VIMRUNTIME/menu.vim
  let g:airline#extensions#tabline#enabled = 1
  set laststatus=2
  
+ " Undotree
+ NeoBundle 'mbbill/undotree'
+ nnoremap ,ut :UndotreeToggle<CR>
+ 
  "Git integration
  NeoBundle 'tpope/vim-fugitive'
  NeoBundle 'gregsexton/gitv'
+ nnoremap ,gs :Gstatus<CR>
+ nnoremap ,gd :Gdiff<CR>
+ nnoremap ,gc :Gcommit<CR>
+ nnoremap ,gl :Gitv<CR>
+ nnoremap ,gg :Git 
+ nnoremap ,g! :Git! 
+
  
  source ~/projectview.vim 
 
   "Watchdog, asynchrounous syntax checking
   NeoBundle 'Shougo/vimproc.vim'
-  "NeoBundle 'thinca/vim-quickrun'
-  "NeoBundle 'osyo-manga/shabadou.vim'
-  "NeoBundle 'osyo-manga/vim-watchdogs'
-  "NeoBundle 'jceb/vim-hier'
-  "NeoBundle 'dannyob/quickfixstatus'
-  "NeoBundle 'KazuakiM/vim-qfsigns'
-  "NeoBundle 'KazuakiM/vim-qfstatusline'
 
   NeoBundle 'Shougo/vimshell.vim'
+
+  " Unite.vim, fuzzy search everything
+  NeoBundle 'Shougo/unite.vim'
+  nnoremap <leader>uf :Unite -buffer-name=files -start-insert file_rec/async<cr>
+  nnoremap <leader>ug :Unite -buffer-name=grep -start-insert grep:.<cr>
+  nnoremap <leader>uc :Unite -buffer-name=command -start-insert command<cr>
+  nnoremap <leader>uy :Unite -buffer-name=yank history/yank<cr>
+  nnoremap <leader>ub :Unite -buffer-name=buffer -quick-match buffer<cr>
+  nnoremap <leader>um :Unite -buffer-name=mark -quick-match bookmark<cr>
+  nnoremap <leader>u<leader> :Unite -buffer-name=buffer -start-insert mapping<cr>
+  nnoremap <leader>uu :Unite -buffer-name=Unite source<CR>
 
 
  " Mark down
  NeoBundle 'tpope/vim-markdown'
  NeoBundle 'https://github.com/jtratner/vim-flavored-markdown'
+
+ "Copy between register " (default register) and * (Windows clipboard)
+ nnoremap <leader>>> :let @*=@"<CR>
+ nnoremap <leader><< :let @"=@*<CR>
 
 
  " HTML, XML
@@ -186,7 +207,7 @@ source $VIMRUNTIME/menu.vim
  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
  let g:syntastic_html_checkers = ['tidy']
  let g:syntastic_html_tidy_exec = 'tidy5'
- NeoBundle 'valloric/MatchTagAlways'
+ NeoBundle 'valloric/MatchTagAlways' "Require python
 
  " CSS
  NeoBundle 'hail2u/vim-css3-syntax'
@@ -196,6 +217,10 @@ source $VIMRUNTIME/menu.vim
  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
  let g:syntastic_css_checkers = ['csslint']
 
+ " SASS
+ NeoBundle 'tpope/vim-haml'
+
+
  "javascript
  NeoBundle 'jelera/vim-javascript-syntax'
  NeoBundle 'othree/javascript-libraries-syntax.vim'
@@ -204,6 +229,9 @@ source $VIMRUNTIME/menu.vim
  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
  NeoBundle 'marijnh/tern_for_vim', { 'build' : {
              \ 'windows' : 'npm install' }, }
+
+ " Node.js
+ NeoBundle 'moll/vim-node'
 
  
  " Refer to |:NeoBundle-examples|.

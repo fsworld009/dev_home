@@ -4,6 +4,16 @@
 " http://d.hatena.ne.jp/osyo-manga/20120924/1348473304
 " http://d.hatena.ne.jp/osyo-manga/20120919/1348054752
 
+
+  "NeoBundle 'thinca/vim-quickrun'
+  "NeoBundle 'osyo-manga/shabadou.vim'
+  "NeoBundle 'osyo-manga/vim-watchdogs'
+  "NeoBundle 'jceb/vim-hier'
+  "NeoBundle 'dannyob/quickfixstatus'
+  "NeoBundle 'KazuakiM/vim-qfsigns'
+  "NeoBundle 'KazuakiM/vim-qfstatusline'
+
+
     "let g:watchdogs_check_BufWritePost_enable = 1
     let g:watchdogs_check_BufWritePost_enables = {
             \ "cpp" : 1,
