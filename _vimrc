@@ -71,6 +71,11 @@ source $VIMRUNTIME/menu.vim
  set foldnestmax=10      "deepest fold is 10 levels
  set nofoldenable        "dont fold by default
  set foldlevel=1         
+
+ "temp files location
+ set backupdir=~/vimfiles/backup//
+ set directory=~/vimfiles/swap//
+ set undodir=~/vimfiles/undo//
  
  "Find and Replace (substitute)
  nnoremap <leader>fr :%s///gcI
@@ -146,7 +151,7 @@ source $VIMRUNTIME/menu.vim
  nnoremap <F3> :NumbersToggle<CR>
  nnoremap <F4> :NumbersOnOff<CR>
 
- "NeoBundle 'majutsushi/tagbar'
+ NeoBundle 'majutsushi/tagbar'
  nmap <leader>tb :TagbarToggle<CR>
 
  NeoBundle 'Shougo/neocomplcache.vim'
@@ -171,6 +176,10 @@ source $VIMRUNTIME/menu.vim
  nnoremap ,gl :Gitv<CR>
  nnoremap ,gg :Git 
  nnoremap ,g! :Git! 
+ 
+ NeoBundle 'airblade/vim-rooter'
+ 
+ 
 
  
  source ~/projectview.vim 
@@ -233,8 +242,13 @@ source $VIMRUNTIME/menu.vim
  NeoBundle 'marijnh/tern_for_vim', { 'build' : {
              \ 'windows' : 'npm install' }, }
 
+ " JSON
+ NeoBundle 'elzr/vim-json'
+ let g:vim_json_syntax_conceal = 0
+ 
  " Node.js
  NeoBundle 'moll/vim-node'
+ NeoBundle 'guileen/vim-node-dict'
 
  
  " Refer to |:NeoBundle-examples|.
