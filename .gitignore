@@ -2,10 +2,7 @@ _viminfo
 .viminfo
 .bash_history
 .config
-/vim/
-!/vim/dict/*.dict
+/vim/bundle/
 /vimfiles/
-gVimPortableSettings.ini
 /.cache/
-_viminfo
 D:/

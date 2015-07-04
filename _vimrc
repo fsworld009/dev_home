@@ -158,6 +158,7 @@ source $VIMRUNTIME/menu.vim
  let g:neocomplcache_enable_at_startup = 1
  let g:neocomplcache_dictionary_filetype_lists = {
    \ 'default'    : '',
+   \ 'css' : $HOME . 'vim/dict/css3.dict'
    \ 'javascript' : $HOME . 'vim/bundle/vim-node-dict/dict/node.dict,' . $HOME . 'vim/dict/javascript.dict',
    \}
  
