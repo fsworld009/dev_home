@@ -138,7 +138,6 @@ source $VIMRUNTIME/menu.vim
  NeoBundle 'tpope/vim-repeat'
 
  NeoBundle 'Lokaltog/vim-easymotion'
- let g:neocomplcache_enable_at_startup = 1
  "EasyMotion key bindings
  nmap <Plug>(easymotion-prefix)s <Plug>(easymotion-s2)
  nmap <Plug>(easymotion-prefix)<Down> <Plug>(easymotion-j)
@@ -148,14 +147,19 @@ source $VIMRUNTIME/menu.vim
 
  NeoBundle 'b3niup/numbers.vim' 
  "Numbers key bindings
- nnoremap <F3> :NumbersToggle<CR>
- nnoremap <F4> :NumbersOnOff<CR>
+ nnoremap <leader>n :NumbersToggle<CR>
+ "nnoremap <leader>nn :NumbersOnOff<CR>
 
  NeoBundle 'majutsushi/tagbar'
  nmap <leader>tb :TagbarToggle<CR>
 
  NeoBundle 'Shougo/neocomplcache.vim'
  "let g:tagbar_ctags_bin = '~/vim/bin/ctags.exe' "this directory is already in $PATH, so this line is useless
+ let g:neocomplcache_enable_at_startup = 1
+ let g:neocomplcache_dictionary_filetype_lists = {
+   \ 'default'    : '',
+   \ 'javascript' : $HOME . 'vim/bundle/vim-node-dict/dict/node.dict,' . $HOME . 'vim/dict/javascript.dict',
+   \}
  
  NeoBundle 'bling/vim-airline'
  let g:airline_theme = 'powerlineish'
@@ -235,16 +239,20 @@ source $VIMRUNTIME/menu.vim
 
  "javascript
  NeoBundle 'jelera/vim-javascript-syntax'
+ "au FileType javascript call JavaScriptFold()
+
  NeoBundle 'othree/javascript-libraries-syntax.vim'
  let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'
  let g:syntastic_js_checkers = ['jshint']
- autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+ "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+ autocmd FileType javascript setlocal omnifunc=tern#Complete
  NeoBundle 'marijnh/tern_for_vim', { 'build' : {
              \ 'windows' : 'npm install' }, }
 
  " JSON
  NeoBundle 'elzr/vim-json'
  let g:vim_json_syntax_conceal = 0
+ autocmd FileType json setlocal foldmethod=syntax
  
  " Node.js
  NeoBundle 'moll/vim-node'
@@ -263,14 +271,6 @@ source $VIMRUNTIME/menu.vim
  " If there are uninstalled bundles found on startup,
  " this will conveniently prompt you to install them.
  NeoBundleCheck
-
-
-" qfstatusline configs
-function! StatuslineUpdate()
-        return qfstatusline#Update()
-endfunction
-let g:Qfstatusline#UpdateCmd = function('StatuslineUpdate')
-set statusline=\ %{mode()}\ \|\ %t\ %m\ %r\ %h\ %w\ %q\ %{StatuslineUpdate()}%=\|\ %Y\ \|\ %{&fileformat}\ \|\ %{&fileencoding}\ 
 
 ":set shellslash
 "set shell=sh.exe

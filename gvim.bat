@@ -11,5 +11,7 @@ set PATH=%ROOT%\bin\ctags\;%PATH%
 set PATH=%ROOT%\bin\python3\;%PATH%
 rem set PATH=%ROOT%\bin\python2\;%PATH%
 
+set NODE_PATH=%folder%\bin\node.js\node_modules
+
 ..\vim\gvim.exe
 exit

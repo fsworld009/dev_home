@@ -3,9 +3,9 @@ _viminfo
 .bash_history
 .config
 /vim/
+!/vim/dict/*.dict
 /vimfiles/
 gVimPortableSettings.ini
 /.cache/
 _viminfo
-*.swp
 D:/

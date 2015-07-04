@@ -10,4 +10,6 @@ set PATH=%PATH%;%folder%\bin\node.js\
 set PATH=%PATH%;%folder%\bin\python3\
 set PATH=%PATH%;%folder%\bin\ruby2\bin\
 
+set NODE_PATH=%folder%\bin\node.js\node_modules
+
 %folder%\msys64\usr\bin\sh.exe -c 'MSYSTEM=MINGW32 exec /bin/sh --login -i'
