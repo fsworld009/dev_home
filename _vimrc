@@ -158,7 +158,7 @@ source $VIMRUNTIME/menu.vim
  let g:neocomplcache_enable_at_startup = 1
  let g:neocomplcache_dictionary_filetype_lists = {
    \ 'default'    : '',
-   \ 'css' : $HOME . 'vim/dict/css3.dict'
+   \ 'css' : $HOME . 'vim/dict/css3.dict',
    \ 'javascript' : $HOME . 'vim/bundle/vim-node-dict/dict/node.dict,' . $HOME . 'vim/dict/javascript.dict',
    \}
  
@@ -170,17 +170,17 @@ source $VIMRUNTIME/menu.vim
  
  " Undotree
  NeoBundle 'mbbill/undotree'
- nnoremap ,ut :UndotreeToggle<CR>
+ nnoremap ,t :UndotreeToggle<CR>
  
  "Git integration
  NeoBundle 'tpope/vim-fugitive'
  NeoBundle 'gregsexton/gitv'
- nnoremap ,gs :Gstatus<CR>
- nnoremap ,gd :Gdiff<CR>
- nnoremap ,gc :Gcommit<CR>
- nnoremap ,gl :Gitv<CR>
- nnoremap ,gg :Git 
- nnoremap ,g! :Git! 
+ nnoremap <leader>gs :Gstatus<CR>
+ nnoremap <leader>gd :Gdiff<CR>
+ nnoremap <leader>gc :Gcommit<CR>
+ nnoremap <leader>gl :Gitv<CR>
+ nnoremap <leader>gg :Git 
+ nnoremap <leader>g! :Git! 
  
  NeoBundle 'airblade/vim-rooter'
  
@@ -201,8 +201,10 @@ source $VIMRUNTIME/menu.vim
   nnoremap <leader>uc :Unite -buffer-name=command -start-insert command<cr>
   nnoremap <leader>uy :Unite -buffer-name=yank history/yank<cr>
   nnoremap <leader>ub :Unite -buffer-name=buffer -quick-match buffer<cr>
+  nnoremap <leader>ut :Unite -buffer-name=tab -quick-match tab<cr>
+  nnoremap <leader>ur :Unite -buffer-name=register -quick-match register<cr>
   nnoremap <leader>um :Unite -buffer-name=mark -quick-match bookmark<cr>
-  nnoremap <leader>u<leader> :Unite -buffer-name=buffer -start-insert mapping<cr>
+  nnoremap <leader>u<leader> :Unite -buffer-name=mapping -start-insert mapping<cr>
   nnoremap <leader>uu :Unite -buffer-name=Unite source<CR>
 
 
@@ -240,7 +242,7 @@ source $VIMRUNTIME/menu.vim
 
  "javascript
  NeoBundle 'jelera/vim-javascript-syntax'
- "au FileType javascript call JavaScriptFold()
+ au FileType javascript call JavaScriptFold()
 
  NeoBundle 'othree/javascript-libraries-syntax.vim'
  let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'
