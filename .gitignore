@@ -5,4 +5,5 @@ _viminfo
 /vim/bundle/
 /vimfiles/
 /.cache/
+.ssh
 D:/

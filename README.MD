@@ -18,3 +18,17 @@ Install Node.js packages for my vimrc setting (For my reference only)
 3. open msys2 bash
     1. goto /home/node.js/
     2. run npm_install.sh
+
+    
+ssh for msys2
+===============================
+it seems that ssh cannot locate to the correct home folder (not reading $HOME or $HOMEPATH..)
+http://qiita.com/nana4gonta/items/622571c66bfe7f1c7150
+Go to /msys64/etc, add
+```
+C:/Users/(windows user name) (path to this repo)
+```
+<ex>
+```
+C:/Users/fsworld009 /d/dev/home
+```

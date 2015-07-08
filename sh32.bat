@@ -9,6 +9,7 @@ set PATH=%PATH%;%folder%\vim\
 set PATH=%PATH%;%folder%\bin\iojs\
 set PATH=%PATH%;%folder%\bin\python3\
 set PATH=%PATH%;%folder%\bin\ruby2\bin\
+set HOMEPATH=%~dp0
 
 set NODE_PATH=%folder%\bin\iojs\node_modules
 
