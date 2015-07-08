@@ -208,9 +208,13 @@ source $VIMRUNTIME/menu.vim
   nnoremap <leader>uu :Unite -buffer-name=Unite source<CR>
 
 
+ " Parenthesis
+ NeoBundle 'oblitum/rainbow'
+ au FileType c,cpp,javascript,java call rainbow#load()
+
  " Mark down
  NeoBundle 'tpope/vim-markdown'
- NeoBundle 'https://github.com/jtratner/vim-flavored-markdown'
+ NeoBundle 'kmanalo/vim-flavored-markdown'
 
  "Copy between register " (default register) and * (Windows clipboard)
  nnoremap <leader>>> :let @*=@"<CR>
