@@ -1,5 +1,5 @@
 @echo off
 call set_path.cmd
 
-..\vim\gvim.exe
+..\eclipse\eclipse.exe
 exit

@@ -213,8 +213,12 @@ source $VIMRUNTIME/menu.vim
  au FileType c,cpp,javascript,java call rainbow#load()
 
  " Mark down
- NeoBundle 'tpope/vim-markdown'
+ "NeoBundle 'tpope/vim-markdown'
  NeoBundle 'kmanalo/vim-flavored-markdown'
+ augroup markdown
+     au!
+     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+ augroup END
 
  "Copy between register " (default register) and * (Windows clipboard)
  nnoremap <leader>>> :let @*=@"<CR>
@@ -246,7 +250,7 @@ source $VIMRUNTIME/menu.vim
 
  "javascript
  NeoBundle 'jelera/vim-javascript-syntax'
- au FileType javascript call JavaScriptFold()
+ "au FileType javascript call JavaScriptFold()
 
  NeoBundle 'othree/javascript-libraries-syntax.vim'
  let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'

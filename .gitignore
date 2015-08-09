@@ -7,3 +7,5 @@ _viminfo
 /.cache/
 .ssh
 D:/
+/npm-cache/
+.lesshst
