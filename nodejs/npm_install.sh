@@ -1,7 +1,7 @@
-../../bin/iojs/npm.cmd install npm -g
-cp -f git.js ../../bin/iojs/node_modules/npm/lib/utils/git.js
-cp -f npmrc ../../bin/iojs/node_modules/npm/npmrc
-cd ../../bin/iojs/
+cp -f git.js ../../bin/nodejs/node_modules/npm/lib/utils/git.js
+cp -f npmrc ../../bin/nodejs/node_modules/npm/npmrc
+cd ../../bin/
+./nodejs/npm install npm -g
 
 ./npm config set cache ~/npm-cache
 ./npm install csslint -g
