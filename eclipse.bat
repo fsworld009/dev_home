@@ -1,5 +1,5 @@
 @echo off
 call set_path.cmd
 
-..\eclipse\eclipse.exe
+..\bin\eclipse\eclipse.exe
 exit
