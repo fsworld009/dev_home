@@ -181,6 +181,8 @@ source $VIMRUNTIME/menu.vim
  nnoremap <leader>gl :Gitv<CR>
  nnoremap <leader>gg :Git 
  nnoremap <leader>g! :Git! 
+ nnoremap <leader>g> :diffget 2<CR>
+ nnoremap <leader>g< :diffget 2<CR>
  
  NeoBundle 'airblade/vim-rooter'
  
