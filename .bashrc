@@ -1,4 +1,4 @@
-echos 'A'
+
 # To the extent possible under law, the author(s) have dedicated all 
 # copyright and related and neighboring rights to this software to the 
 # public domain worldwide. This software is distributed without any warranty. 
@@ -24,10 +24,10 @@ echos 'A'
 # See man bash for more options...
 #
 # Don't wait for job termination notification
-# set -o notify
+# -o notify
 #
 # Don't use ^D to exit
-# set -o ignoreeof
+# -o ignoreeof
 #
 # Use case-insensitive filename globbing
 # shopt -s nocaseglob
@@ -110,7 +110,7 @@ echos 'A'
 # Umask
 #
 # /etc/profile sets 022, removing write perms to group + others.
-# Set a more restrictive umask: i.e. no exec perms for others:
+# a more restrictive umask: i.e. no exec perms for others:
 # umask 027
 # Paranoid: neither group nor others have any perms:
 # umask 077
@@ -189,3 +189,36 @@ echos 'A'
 # }
 # 
 # alias cd=cd_func
+
+
+# fix clear command
+TERM=cygwin
+
+#Default PS1 is in /etc/bash.bashrc
+if ! type __git_ps1 | grep -q '^function$' 2>/dev/null; then
+    export PS1='\033[1;32m\w\033[0m \033[35m$(__git_ps1)\033[0m'$'\n$ '
+else
+    export PS1='\033[1;32m\w\033[0m\n$ '
+fi
+
+#reference:
+#http://sourceforge.net/p/msys2/tickets/17/
+#http://stackoverflow.com/questions/1007538/check-if-a-function-exists-from-a-bash-script
+
+# Env Variables
+ROOT="$(dirname ~)"
+HOMEPATH=~
+JAVA_HOME="$ROOT"/bin/jdk1.8
+ATOM_HOME="$ROOT"/home/.atom
+NODE_PATH="$ROOT"/bin/nodejs/node_modules
+PYTHON_HOME="$ROOT"/bin/python2
+
+
+PATH="$PATH":"$ROOT"/bin/vim
+PATH="$PATH":"$JAVA_HOME"/bin
+PATH="$PATH":"$ROOT"/msys64/usr/bin
+PATH="$PATH":"$ROOT"/bin/nodejs
+PATH="$PATH":"$ROOT"/bin/tidy
+PATH="$PATH":"$ROOT"/bin/ctags
+PATH="$PATH":"$ROOT"/bin/python3
+PATH="$PATH":"$ROOT"/bin/python2
